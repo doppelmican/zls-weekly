@@ -1,0 +1,326 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="今週末は伊万里湾大花火とゆめタウン佐賀のストア。会場限定グッズは11/24から事後販売あり"><meta property="og:type" content="website"><meta property="og:site_name" content="週刊ゾンサガ通信"><meta property="og:title" content="週刊ゾンサガ通信（非公式）"><meta property="og:description" content="今週末は伊万里湾大花火とゆめタウン佐賀のストア。会場限定グッズは11/24から事後販売あり"><meta name="twitter:card" content="summary_large_image"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>週刊ゾンサガ通信</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: left rail of past issues (stacks above on phones), one issue as a stack of
+   topic blocks; "今後の予定" set apart as a dated schedule list. */
+:root {
+  --bg: #f3f1ee;          /* pale paper with a faint green-grey cast */
+  --surface: #ffffff;
+  --ink: #1d2422;
+  --muted: #5d6965;
+  --line: #d9dcd8;
+  --accent: #1f7a5c;      /* 佐賀の緑 */
+  --accent-ink: #ffffff;
+  --pop: #c2356b;         /* フランシュシュのピンク */
+  --pop-soft: #f7e3ea;
+  --font-display: "Dela Gothic One", "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131816; --surface: #1b2220; --ink: #e8ece9; --muted: #9aa7a2; --line: #2d3734;
+    --accent: #4fc39a; --accent-ink: #0d1a15; --pop: #f07aa6; --pop-soft: #3a1f2a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131816; --surface: #1b2220; --ink: #e8ece9; --muted: #9aa7a2; --line: #2d3734;
+  --accent: #4fc39a; --accent-ink: #0d1a15; --pop: #f07aa6; --pop-soft: #3a1f2a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.75;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--pop); outline-offset: 2px; border-radius: 4px; }
+
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+header.mast { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 8px 24px; padding-bottom: 18px; border-bottom: 3px solid var(--ink); }
+.mast h1 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 6vw, 46px); line-height: 1.1; letter-spacing: 0.02em; }
+.mast h1 .no { color: var(--pop); }
+.mast p { margin: 0; color: var(--muted); font-size: 13px; }
+
+.layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 36px; margin-top: 28px; }
+@media (max-width: 760px) { .layout { grid-template-columns: minmax(0, 1fr); gap: 20px; } }
+
+/* 号の一覧 */
+nav.issues h2 { margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; color: var(--muted); font-weight: 700; }
+nav.issues ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+@media (max-width: 760px) {
+  nav.issues ol { flex-direction: row; overflow-x: auto; padding-bottom: 6px; }
+  nav.issues li { flex: 0 0 auto; }
+}
+nav.issues button {
+  width: 100%; text-align: left; font: inherit; color: var(--ink); cursor: pointer;
+  background: transparent; border: 1px solid transparent; border-radius: 8px; padding: 8px 10px;
+  display: flex; flex-direction: column; gap: 0;
+}
+nav.issues button:hover { border-color: var(--line); }
+nav.issues button[aria-current="true"] { background: var(--accent); color: var(--accent-ink); }
+nav.issues .wk { font-weight: 700; font-size: 14px; line-height: 1.4; }
+nav.issues .rg { font-family: var(--font-mono); font-size: 11.5px; opacity: 0.8; font-variant-numeric: tabular-nums; }
+
+/* 号本体 */
+.issue { min-width: 0; display: flex; flex-direction: column; gap: 32px; }
+.lede .kicker { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.lede h2 { margin: 4px 0 12px; font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 3.6vw, 30px); line-height: 1.35; text-wrap: balance; }
+.lede p { margin: 0; max-width: 40em; font-size: 16px; }
+
+.upcoming { background: var(--pop-soft); border-radius: 12px; padding: 18px 20px; }
+.upcoming h3, .topic h3 { margin: 0 0 10px; font-size: 13px; letter-spacing: 0.12em; font-weight: 700; }
+.upcoming h3 { color: var(--pop); }
+.upcoming ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.upcoming li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.upcoming .d { font-family: var(--font-mono); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--pop); }
+.upcoming .pl { color: var(--muted); font-size: 13px; }
+
+.topic h3 { display: flex; align-items: center; gap: 10px; color: var(--accent); }
+.topic h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.topic ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.topic li { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 2px; }
+.topic li:last-child { border-bottom: 0; }
+.topic .t { font-weight: 700; font-size: 15.5px; line-height: 1.55; text-decoration: none; }
+.topic a.t:hover { text-decoration: underline; text-decoration-color: var(--pop); text-underline-offset: 3px; }
+.topic .n { margin: 2px 0 0; color: var(--ink); max-width: 42em; }
+.topic .meta { font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0 12px; }
+.topic .meta .date { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* グッズ一覧 */
+.goods h3 { margin: 0 0 4px; font-size: 13px; letter-spacing: 0.12em; font-weight: 700; color: var(--pop); }
+.goods .sub { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
+.goods-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+.g { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.g-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.g-name { font-weight: 700; line-height: 1.5; text-decoration: none; }
+a.g-name:hover { text-decoration: underline; text-decoration-color: var(--pop); text-underline-offset: 3px; }
+.pill { flex: 0 0 auto; font-size: 11.5px; font-weight: 700; padding: 1px 9px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; line-height: 1.7; }
+.pill.on { color: var(--accent); }
+.pill.soon { color: var(--pop); background: var(--pop-soft); }
+.pill.plan { color: var(--muted); }
+.pill.off { color: var(--muted); border-style: dashed; }
+.g dl { margin: 0; display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 3px 10px; font-size: 13.5px; }
+.g dt { color: var(--muted); }
+.g dd { margin: 0; min-width: 0; }
+.g dd.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.yes { color: var(--accent); font-weight: 700; }
+.no-mark { color: var(--muted); }
+.unk { color: var(--muted); }
+.g .gn { margin: 0; font-size: 13px; color: var(--muted); }
+
+footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+
+.disclaimer { margin-top: 48px; padding-top: 16px; border-top: 3px solid var(--ink); font-size: 12.5px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+.disclaimer p { margin: 0; max-width: 60em; }
+
+/* 状態表示 */
+.state { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 28px 24px; }
+.state h2 { margin: 0 0 6px; font-family: var(--font-display); font-weight: 400; font-size: 22px; }
+.state p { margin: 0; color: var(--muted); max-width: 36em; }
+.note { font-size: 12.5px; color: var(--pop); margin-top: 8px; }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <h1>週刊ゾンサガ通信<span class="no" id="issue-no"></span></h1>
+    <p>ゾンビランドサガ関連のニュースとグッズ情報を毎週まとめる、ファンによる非公式ページです</p>
+  </header>
+
+  <div class="layout">
+    <nav class="issues" aria-label="バックナンバー" id="issues-nav" hidden>
+      <h2>バックナンバー</h2>
+      <ol id="issues"></ol>
+    </nav>
+
+    <main class="issue" id="issue">
+      <div class="state" id="state">
+        <h2>最新号を読み込んでいます</h2>
+        <p>毎週の収集が終わると、ここに今週のまとめ・グッズの販売期間や通販情報・今後の予定・トピック別の記事一覧が載ります。</p>
+        <p class="note" id="state-note" hidden></p>
+      </div>
+    </main>
+  </div>
+
+  <aside class="disclaimer">
+    <p>このページは公式とは関係のない、ファンによる非公式のまとめです。作品名・商品名などの権利は各権利者に帰属します。</p>
+    <p>販売期間・価格・在庫は変わることがあります。購入前に必ず各販売ページや公式サイトで最新情報を確認してください。記事の内容は要約で、詳しくはリンク先の元記事をご覧ください。</p>
+  </aside>
+</div>
+
+<script>window.__DIGESTS__ = [{"weekLabel": "2026年11月 第3週", "rangeFrom": "2026-11-10", "rangeTo": "2026-11-17", "createdAt": "2026-11-17T12:00", "sourceCount": 10, "headline": "今週末は伊万里湾大花火とゆめタウン佐賀のストア。会場限定グッズは11/24から事後販売あり", "summary": "劇場版公開1周年のポップアップストアが11/20からゆめタウン佐賀、11/21から仙台・なんばに巡回します。ゲーマーズオンラインショップでも2027年1月4日まで同じ商品を買えます。11/21の伊万里湾大花火では法被やアクスタなど会場限定グッズが出ますが、CyStoreで11/24〜12/21に事後販売があるので、行けなくても入手できます。AMNIBUSでは描き下ろしAni-Art第2弾の受注が11/9から始まっています（締切は未発表）。", "goods": [{"name": "伊万里湾大花火 会場限定グッズ（法被・アクスタ・ブランケットほか）", "status": "開始前", "from": "2026-11-21", "to": "2026-12-21", "method": "11/21 会場販売 → 11/24 12:00〜12/21 14:59 CyStoreで事後販売", "online": "あり", "afterSale": "あり", "seller": "伊万里湾大花火 特設エリア / CyStore", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-movie-imari-bay-fireworks2026/", "note": "アクスタ各1,700円、缶バッジ500円、法被8,000円など。荒天で22日に順延した場合は会場販売なし。"}, {"name": "劇場版 公開1周年記念ポップアップストア", "status": "販売中", "from": "2026-10-24", "to": "2027-01-04", "method": "6会場を巡回＋ゲーマーズオンラインショップで同時通販。受注商品（法被・スケボーデッキ等）は1/4締切、2027年3月発売予定", "online": "あり", "afterSale": "会期中に同時通販", "seller": "ゲーマーズ", "url": "https://www.gamers.co.jp/contents/event_fair/detail.php?id=8005", "note": "税込2,200円ごとに特典ブロマイド（全13種）。ゆめタウン佐賀は5,500円ごとに限定クリアファイル。"}, {"name": "描き下ろし Ani-Art 第2弾（缶バッジ・ブロマイド・BIGアクスタほか）", "status": "受付中", "from": "2026-11-09", "to": "", "method": "受注販売（通販のみ）", "online": "あり", "afterSale": "通販のみ", "seller": "AMNIBUS（arma bianca）", "url": "https://amnibus.com/products/title/543,1779", "note": "缶バッジ全9種 単品528円／BOX 4,752円。締切と発送時期は未発表なので商品ページで確認を。"}, {"name": "描き下ろし ロメロパジャマver. グッズ", "status": "要確認", "from": "", "to": "", "method": "予約は9/6で終了。一般発売は11月中旬予定、予約分のお届けは11月下旬", "online": "あり", "afterSale": "あり", "seller": "Anime Store.JP（arma bianca）", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-movie-romero-pajamas-armabianca-anime-store-goods2026/", "note": "AKIHABARAゲーマーズ本店で先行販売された商品の事後通販。一般発売の在庫状況はアニストで確認を。"}, {"name": "京まふ2026 会場商品（缶バッジ・木札ストラップ・手ぬぐいほか）", "status": "終了", "from": "2026-09-30", "to": "2026-10-14", "method": "事後通販（受付終了）。発送は11月下旬〜12月中旬に順次", "online": "あり", "afterSale": "あり", "seller": "THEキャラ", "url": "https://www.tv-tokyo.co.jp/plus/external-pr/entry/260833.html", "note": "注文済みの人は、まもなく発送が始まります。"}], "upcoming": [{"date": "11/20〜23", "title": "つくるまちの開放日（伝統工芸品コラボ景品・スタンプラリー）", "place": "佐賀県内", "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBvYmRseloxQ2Y1b2I3Y3FRcjBQQS1mVjVGZ1MzNFF0NEJUbmROSFl5WHl1bm5HbmdfYnVnX0VuajJid2IzYkVITE5jUVJvSFM4X3c4TGFR?oc=5"}, {"date": "11/20〜29", "title": "1周年ポップアップストア", "place": "ゆめタウン佐賀", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-yumeginga-popup-2026/"}, {"date": "11/21", "title": "伊万里湾大花火コラボ（会場限定グッズ）・FM佐賀公開録音", "place": "伊万里港", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-movie-imari-bay-fireworks2026/"}, {"date": "11/21〜12/6", "title": "1周年ポップアップストア", "place": "ゲーマーズ仙台店・なんば店", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-yumeginga-popup-2026/"}, {"date": "11/24〜12/21", "title": "伊万里湾大花火グッズ 事後販売", "place": "CyStore", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-movie-imari-bay-fireworks2026/"}, {"date": "12/19〜1/4", "title": "1周年ポップアップストア", "place": "ゲーマーズ名古屋店・博多店", "url": "https://collabo-cafe.com/events/collabo/zombielandsaga-yumeginga-popup-2026/"}], "sections": [{"name": "イベント・コラボ", "items": [{"title": "伊万里湾大花火でFM佐賀公開録音 11月21日、オラキオさんと本渡楓さんらがゾンサガトーク", "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5GcFdRVi1hZmVuMzVScUhGNklyY2VYdjQzZWFzbU9RNmNfMWNQcHkzOTZ4QVBCWmxuQkJHdjNqYTRsWWt0RHdVemFCZ3c1OHpQcUlGRjI0NnB2akhSOWxFdkNnSVBuNU95QWdLS0g1VkNReGVqUXhF?oc=5", "source": "佐賀新聞（dメニューニュース）", "date": "2026-11-14", "note": "花火当日に公開録音。会場限定グッズの販売と同じ日です。"}, {"title": "＜ゾンビランドサガ＞県内伝統工芸品とコラボ 「つくるまちの開放日」景品", "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBvYmRseloxQ2Y1b2I3Y3FRcjBQQS1mVjVGZ1MzNFF0NEJUbmROSFl5WHl1bm5HbmdfYnVnX0VuajJid2IzYkVITE5jUVJvSFM4X3c4TGFR?oc=5", "source": "佐賀新聞", "date": "2026-11-13", "note": "11/20〜23。スタンプラリーやワークショップの景品として工芸品コラボが登場します（販売ではなく景品）。"}, {"title": "佐賀バルーンフェスタ・夜間係留 ゾンビランドサガとコラボも", "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9md2k0UW5YS2s0WDlLSDFaaE5JeWROSHVGTzNyZWZuRWtxTF90R2R1bFNUVjN1dXN5aTczUzRjbnFDWDdyQU0xWFpFZ3NPeEM1TEQxMkwwX183NHZuV2c?oc=5", "source": "佐賀新聞", "date": "2026-11-15", "note": "夜間係留の様子を動画で紹介。"}]}, {"name": "佐賀・聖地巡礼", "items": [{"title": "アニメ「ゾンビランドサガ」聖地巡礼ガイド(1)佐賀市編", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9jcWpOaWxUWG9YQ3BlaWFKdlIxNllHN0RKc05MZ1JSU0VQUnZpVThLVkFITTd3TmZKVE9ULXl4SzN2YVZLcWlFTFY5c0JZV2hWUllWY0FMcmJORkpacEZhYXZYa053Tkt0ekgzZTg2cmg4Y0pQYkpBREFvNkM?oc=5", "source": "ウォーカープラス", "date": "2026-11-15", "note": "ゆめタウン佐賀のストアに行くついでに回れるスポット集。"}, {"title": "アニメ「ゾンビランドサガ」聖地巡礼ガイド(2)唐津市編", "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1SeE5mS1JDQ2V5c0lUaklDcmMwamFoSG5ISVFVMjVJRU1QMkNpNlBPN0hxb21HbWpUTGUwMUNUNmFuWHJuU0xiaC1ZVjN4SGxaRlNEdVRQOXNtazlQWlRVemhiSnc1NEtkdUlpdXlTNmhISFp0ZUIwZlFzUVE?oc=5", "source": "ウォーカープラス", "date": "2026-11-16"}, {"title": "アニメ「ゾンビランドサガ」の登場キャラが佐賀県PR大使に！トークショーの模様を突撃レポ", "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4tWVVsUFAwdVAtS0ZUSkpxVy1PSmthcnZULTlnZEVUNlRsS3MycEUyR054Xy1UVGlFSEFuSGJTYUF1cnFkTUhtSWZlOHJZYWVJUXZyNEdnUy1hQXhSZlBxWHZLZGdhb0hpNGdkbjNxbDRCcEtvaGZtNkd0SQ?oc=5", "source": "ウォーカープラス", "date": "2026-11-12"}, {"title": "＜週刊ゾンビランドサガ新聞＞嬉野伝統芸能保存会 「ゆうぎりの力借りたい」花魁衣装・パネル制作", "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBuN0JqeUI3YWs5OW5iVTBwTGNwUGNlUzd0Tnk2SW1UNXdUMlllZzJ0d2hsQ08yRHVHdjZaRzhERjFsdFdVUS1tY05mMXY0aFJnRUVQWkFR?oc=5", "source": "佐賀新聞", "date": "2026-11-12"}]}], "id": "2026-11-17"}];</script>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  let issues = [];
+  let currentId = null;
+
+  function el(tag, attrs, ...kids) {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (v == null) continue;
+      if (k === "class") n.className = v; else n.setAttribute(k, v);
+    }
+    for (const k of kids) if (k != null) n.append(k);
+    return n;
+  }
+  const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//.test(u)) ? u : null;
+  const md = (s) => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? `${+m[2]}/${+m[3]}` : (s || ""); };
+
+  function showState(title, body, note) {
+    const s = $("state");
+    if (!s) return;
+    s.querySelector("h2").textContent = title;
+    s.querySelector("p").textContent = body;
+    const nt = $("state-note");
+    if (note) { nt.textContent = note; nt.hidden = false; } else nt.hidden = true;
+  }
+
+  function renderNav() {
+    const ol = $("issues");
+    ol.replaceChildren();
+    issues.forEach((d) => {
+      const b = el("button", { type: "button", "aria-current": d.id === currentId ? "true" : "false" },
+        el("span", { class: "wk" }, d.data.weekLabel || d.id),
+        el("span", { class: "rg" }, `${md(d.data.rangeFrom)} – ${md(d.data.rangeTo)}`));
+      b.addEventListener("click", () => select(d.id));
+      ol.append(el("li", {}, b));
+    });
+    $("issues-nav").hidden = issues.length === 0;
+  }
+
+  function renderIssue(doc) {
+    const d = doc.data;
+    const main = $("issue");
+    main.replaceChildren();
+    const idx = issues.findIndex((x) => x.id === doc.id);
+    $("issue-no").textContent = issues.length ? ` 第${issues.length - idx}号` : "";
+
+    main.append(el("section", { class: "lede" },
+      el("div", { class: "kicker" }, `${d.weekLabel || ""}　${d.rangeFrom || ""} 〜 ${d.rangeTo || ""}`),
+      el("h2", {}, d.headline || "今週のまとめ"),
+      d.summary ? el("p", {}, d.summary) : null));
+
+    if (Array.isArray(d.goods) && d.goods.length) {
+      const PILL = { "販売中": "on", "受付中": "on", "まもなく終了": "soon", "開始前": "plan", "終了": "off" };
+      const yn = (v) => v === "あり" ? el("span", { class: "yes" }, "あり")
+                      : v === "なし" ? el("span", { class: "no-mark" }, "なし")
+                      : el("span", { class: "unk" }, v || "未発表");
+      const list = el("div", { class: "goods-list" });
+      d.goods.forEach((g) => {
+        const url = safeUrl(g.url);
+        const name = url ? el("a", { class: "g-name", href: url, target: "_blank", rel: "noopener" }, g.name || "")
+                         : el("span", { class: "g-name" }, g.name || "");
+        const period = [g.from, g.to].some(Boolean) ? `${g.from ? md(g.from) : "?"} 〜 ${g.to ? md(g.to) : "未定"}` : "未発表";
+        list.append(el("article", { class: "g" },
+          el("div", { class: "g-head" }, name, g.status ? el("span", { class: "pill " + (PILL[g.status] || "plan") }, g.status) : null),
+          el("dl", {},
+            el("dt", {}, "期間"), el("dd", { class: "mono" }, period),
+            el("dt", {}, "販売方法"), el("dd", {}, g.method || "未発表"),
+            el("dt", {}, "オンライン"), el("dd", {}, yn(g.online)),
+            el("dt", {}, "事後通販"), el("dd", {}, yn(g.afterSale)),
+            el("dt", {}, "販売元"), el("dd", {}, g.seller || "—")),
+          g.note ? el("p", { class: "gn" }, g.note) : null));
+      });
+      main.append(el("section", { class: "goods" },
+        el("h3", {}, "グッズ・物販"),
+        el("p", { class: "sub" }, "期間・オンライン販売・事後通販の有無。終了が近い順に並べています。"),
+        list));
+    }
+
+    if (Array.isArray(d.upcoming) && d.upcoming.length) {
+      const ul = el("ul");
+      d.upcoming.forEach((u) => {
+        const url = safeUrl(u.url);
+        const t = url ? el("a", { href: url, target: "_blank", rel: "noopener" }, u.title || "") : el("span", {}, u.title || "");
+        ul.append(el("li", {}, el("span", { class: "d" }, u.date || ""),
+          el("span", {}, t, u.place ? el("span", { class: "pl" }, `　${u.place}`) : null)));
+      });
+      main.append(el("section", { class: "upcoming" }, el("h3", {}, "今後の予定"), ul));
+    }
+
+    (d.sections || []).forEach((s) => {
+      if (!s || !Array.isArray(s.items) || !s.items.length) return;
+      const ul = el("ul");
+      s.items.forEach((it) => {
+        const url = safeUrl(it.url);
+        const t = url ? el("a", { class: "t", href: url, target: "_blank", rel: "noopener" }, it.title || "")
+                      : el("span", { class: "t" }, it.title || "");
+        ul.append(el("li", {}, t,
+          it.note ? el("p", { class: "n" }, it.note) : null,
+          el("div", { class: "meta" },
+            it.source ? el("span", {}, it.source) : null,
+            it.date ? el("span", { class: "date" }, it.date) : null)));
+      });
+      main.append(el("section", { class: "topic" }, el("h3", {}, s.name || "トピック"), ul));
+    });
+
+    main.append(el("footer", { class: "foot" },
+      `収集 ${d.sourceCount ?? "—"} 件から作成 ・ 作成日時 ${(d.createdAt || "").replace("T", " ").slice(0, 16)}`));
+  }
+
+  function select(id) {
+    currentId = id;
+    const doc = issues.find((x) => x.id === id);
+    renderNav();
+    if (doc) renderIssue(doc);
+    try { if (location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id); } catch (e) {}
+  }
+
+  function onHash() {
+    const h = location.hash.slice(1);
+    if (h && h !== currentId && issues.some((x) => x.id === h)) select(h);
+  }
+
+  async function start() {
+    // render.py が埋め込んだデータがあれば、それだけで表示する（ログイン不要の版）
+    const embedded = window.__DIGESTS__;
+    if (Array.isArray(embedded)) {
+      issues = embedded.map((d) => ({ id: d.id, data: d }))
+        .sort((a, b) => String(b.data.rangeTo || "").localeCompare(String(a.data.rangeTo || "")));
+      if (!issues.length) { showState("まだ号がありません", "毎週の収集が終わると、最初の号がここに載ります。"); return; }
+      const want = location.hash.slice(1);
+      select(issues.some((x) => x.id === want) ? want : issues[0].id);
+      window.addEventListener("hashchange", onHash);
+      return;
+    }
+    let db = null;
+    try { db = await window.claude?.use?.("db"); } catch (e) { db = null; }
+    if (!db) {
+      showState("まとめを読み込めません", "このページはclaude.aiにサインインして開くと、毎週のまとめが表示されます。");
+      return;
+    }
+    const timer = setTimeout(() => {
+      showState("まとめを読み込めません", "保存先にまだ接続できていません。しばらくするとそのまま表示されます。");
+    }, 10000);
+    db.collection("digests").orderBy("rangeTo", "desc").limit(200).onSnapshot((snap) => {
+      if (!snap.metadata.fromCache) clearTimeout(timer);
+      issues = snap.docs.map((d) => ({ id: d.id, data: d.data() || {} }));
+      if (!issues.length) {
+        if (!snap.metadata.fromCache) showState("まだ号がありません", "毎週の収集が終わると、最初の号がここに載ります。");
+        return;
+      }
+      const want = location.hash.slice(1);
+      const id = issues.some((x) => x.id === currentId) ? currentId
+               : issues.some((x) => x.id === want) ? want : issues[0].id;
+      select(id);
+    }, (err) => {
+      clearTimeout(timer);
+      showState("まとめを読み込めません", "保存先との接続が切れました。ページを開き直してください。", err && err.code);
+    });
+    window.addEventListener("hashchange", onHash);
+  }
+  start();
+})();
+</script>
+</body></html>
