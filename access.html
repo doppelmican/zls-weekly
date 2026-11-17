@@ -1,0 +1,109 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="佐賀空港と主な駅で借りられるレンタカー・レンタサイクル・シェアサイクルのまとめ（非公式）"><meta property="og:type" content="website"><meta property="og:site_name" content="週刊ゾンサガ通信"><meta property="og:title" content="週刊ゾンサガ通信（非公式）"><meta property="og:description" content="佐賀空港と主な駅で借りられるレンタカー・レンタサイクル・シェアサイクルのまとめ（非公式）"><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://doppelmican.github.io/zls-weekly/"><meta property="og:image" content="https://doppelmican.github.io/zls-weekly/og.png"><meta name="twitter:image" content="https://doppelmican.github.io/zls-weekly/og.png"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>佐賀の移動ガイド｜週刊ゾンサガ通信</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column of hubs (airport / stations); each hub lists its rentals as rows tagged by type. */
+:root {
+  --bg: #f3f1ee; --surface: #ffffff; --ink: #1d2422; --muted: #5d6965; --line: #d9dcd8;
+  --accent: #1f7a5c; --accent-ink: #ffffff; --pop: #c2356b; --pop-soft: #f7e3ea;
+  --font-display: "Dela Gothic One", "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131816; --surface: #1b2220; --ink: #e8ece9; --muted: #9aa7a2; --line: #2d3734;
+    --accent: #4fc39a; --accent-ink: #0d1a15; --pop: #f07aa6; --pop-soft: #3a1f2a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131816; --surface: #1b2220; --ink: #e8ece9; --muted: #9aa7a2; --line: #2d3734;
+  --accent: #4fc39a; --accent-ink: #0d1a15; --pop: #f07aa6; --pop-soft: #3a1f2a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.75; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--pop); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.back { font-size: 13px; color: var(--accent); text-decoration: none; }
+.back:hover { text-decoration: underline; }
+header { padding-bottom: 16px; border-bottom: 3px solid var(--ink); display: flex; flex-direction: column; gap: 6px; }
+h1 { margin: 6px 0 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 5vw, 38px); line-height: 1.2; }
+.intro { margin: 0; max-width: 42em; }
+.checked { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+main { display: flex; flex-direction: column; gap: 28px; margin-top: 28px; }
+.hub h2 { margin: 0; font-size: 19px; font-weight: 700; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; }
+.hub h2 .ar { font-size: 13px; font-weight: 500; color: var(--muted); }
+.hub .hn { margin: 4px 0 10px; color: var(--muted); font-size: 13.5px; max-width: 42em; }
+.items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  display: grid; grid-template-columns: 8em minmax(0, 1fr); gap: 4px 14px; align-items: start; }
+@media (max-width: 520px) { .item { grid-template-columns: minmax(0, 1fr); } }
+.tag { justify-self: start; font-size: 12px; font-weight: 700; padding: 1px 10px; border-radius: 999px; line-height: 1.8; white-space: nowrap; }
+.tag.car { background: var(--ink); color: var(--bg); }
+.tag.share { background: var(--accent); color: var(--accent-ink); }
+.tag.rent { background: var(--pop-soft); color: var(--pop); }
+.body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.nm { font-weight: 700; text-decoration: none; }
+a.nm:hover { text-decoration: underline; text-decoration-color: var(--pop); text-underline-offset: 3px; }
+.dt { margin: 0; font-size: 13.5px; }
+.links { display: flex; gap: 14px; font-size: 12.5px; }
+.links a { color: var(--accent); }
+.foot { margin-top: 40px; padding-top: 14px; border-top: 3px solid var(--ink); font-size: 12.5px; color: var(--muted); }
+.foot p { margin: 0; }
+</style>
+
+<div class="wrap">
+  <header>
+    <a class="back" href="./">← 週刊ゾンサガ通信へ戻る</a>
+    <h1>佐賀の移動ガイド</h1>
+    <p class="intro" id="intro"></p>
+    <div class="checked" id="checked"></div>
+    <div class="legend"><span class="tag car">レンタカー</span><span class="tag share">シェアサイクル</span><span class="tag rent">レンタサイクル</span></div>
+  </header>
+  <main id="hubs"></main>
+  <div class="foot">
+    <p>ファンによる非公式のまとめです。料金・営業時間・貸出状況は変わることがあります。利用前に各社・各観光協会の公式情報を確認してください。</p>
+  </div>
+</div>
+
+<script>window.__ACCESS__ = {"checkedAt": "2026-11-17", "intro": "佐賀の聖地やイベント会場をめぐるときの「足」を、空港と主な駅ごとにまとめました。車がなくても回れるように、自転車の借り方も載せています。料金や営業時間は変わりやすいので、利用前に各社・各観光協会で確認してください。", "hubs": [{"name": "九州佐賀国際空港", "area": "佐賀市川副町", "note": "佐賀駅へは空港アクセスバスで約30分。県庁前など市の中心部にも停まります。", "items": [{"type": "レンタカー", "name": "空港の各社カウンター", "detail": "トヨタ、ニッポン、日産、タイムズ、オリックス、バジェットなど6〜7社。ターミナルビル1階のカウンターと、隣のレンタカーターミナルで手続きします（会社によって場所が違います）。営業はおおむね8時〜20時。", "mapQuery": "佐賀空港 レンタカーターミナル", "url": "https://www.pref.saga.lg.jp/airport/"}]}, {"name": "JR佐賀駅", "area": "佐賀市駅前中央", "note": "聖地が多い佐賀城まわり（本丸歴史館・656広場など）へは、駅から自転車で10〜15分ほど。", "items": [{"type": "レンタカー", "name": "バジェットレンタカー 佐賀駅前店", "detail": "佐賀駅構内の東館改札口からすぐ。営業は8時〜20時。", "mapQuery": "バジェットレンタカー 佐賀駅前店"}, {"type": "レンタカー", "name": "ニッポンレンタカー 佐賀駅前", "detail": "佐賀駅南口の正面。乗り捨てにも対応しています。", "mapQuery": "ニッポンレンタカー 佐賀駅前", "url": "https://www.nipponrentacar.co.jp/shop/saga.html"}, {"type": "シェアサイクル", "name": "チャリチャリ（Charichari）", "detail": "アプリで借りて、別のポートに返せるシェアサイクル。佐賀駅北口のほか、佐賀県庁・県立美術館など佐賀城周辺や中心市街地にポートがあります。", "mapQuery": "佐賀駅北口 チャリチャリ", "url": "https://charichari.bike/"}]}, {"name": "JR武雄温泉駅", "area": "武雄市", "note": "西九州新幹線の停車駅。武雄温泉の楼門までは歩いて15分ほどです。", "items": [{"type": "レンタサイクル", "name": "電動アシスト自転車（武雄市観光協会）", "detail": "駅の中にある観光案内所「たけなび」で申し込めます。坂の多い武雄でも楽に回れる電動タイプです。", "mapQuery": "武雄温泉駅 観光案内所", "url": "https://www.takeo-kk.net/"}]}, {"name": "嬉野温泉駅・嬉野温泉街", "area": "嬉野市", "note": "温泉街は駅から少し離れているので、自転車があると便利です。", "items": [{"type": "レンタサイクル", "name": "嬉野温泉観光協会の電動自転車", "detail": "観光協会で電動アシスト自転車を貸し出しています（有田・武雄と共同の事業）。", "mapQuery": "嬉野温泉観光協会"}, {"type": "レンタサイクル", "name": "シモムラサイクルズ", "detail": "嬉野温泉駅の近くにあるレンタサイクル店。ネットで予約できます。", "mapQuery": "シモムラサイクルズ 嬉野"}]}, {"name": "有田駅まわり", "area": "有田町", "note": "焼き物の町並みは自転車での散策向きです。", "items": [{"type": "レンタサイクル", "name": "KILIN ARITA 観光案内所", "detail": "電動アシスト自転車を借りられます（武雄・嬉野と共同の事業）。", "mapQuery": "KILIN ARITA 観光案内所"}]}, {"name": "JR唐津駅", "area": "唐津市", "note": "唐津城や唐津神社は駅から歩ける距離。呼子まで足をのばすならレンタカーかバスで。", "items": [{"type": "レンタサイクル", "name": "唐津駅総合観光案内所に相談", "detail": "駅で借りられるレンタサイクルの最新情報は確認できませんでした。貸し出しの有無は、駅の観光案内所で確かめてください。", "mapQuery": "唐津駅総合観光案内所", "url": "https://www.karatsu-kankou.jp/"}]}]};</script>
+<script>
+(function () {
+  const data = window.__ACCESS__ || { hubs: [] };
+  function el(tag, attrs, ...kids) {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) { if (v == null) continue; if (k === "class") n.className = v; else n.setAttribute(k, v); }
+    for (const k of kids) if (k != null) n.append(k);
+    return n;
+  }
+  const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//.test(u)) ? u : null;
+  const TAG = { "レンタカー": "car", "シェアサイクル": "share", "レンタサイクル": "rent" };
+  document.getElementById("intro").textContent = data.intro || "";
+  document.getElementById("checked").textContent = data.checkedAt ? `情報の確認日：${data.checkedAt}` : "";
+  const root = document.getElementById("hubs");
+  (data.hubs || []).forEach((h) => {
+    const ul = el("ul", { class: "items" });
+    (h.items || []).forEach((it) => {
+      const url = safeUrl(it.url);
+      const map = it.mapQuery ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(it.mapQuery) : null;
+      ul.append(el("li", { class: "item" },
+        el("span", { class: "tag " + (TAG[it.type] || "rent") }, it.type || ""),
+        el("div", { class: "body" },
+          url ? el("a", { class: "nm", href: url, target: "_blank", rel: "noopener" }, it.name || "") : el("span", { class: "nm" }, it.name || ""),
+          it.detail ? el("p", { class: "dt" }, it.detail) : null,
+          el("div", { class: "links" },
+            map ? el("a", { href: map, target: "_blank", rel: "noopener" }, "地図で見る") : null,
+            url ? el("a", { href: url, target: "_blank", rel: "noopener" }, "公式・詳細") : null))));
+    });
+    root.append(el("section", { class: "hub" },
+      el("h2", {}, h.name || "", h.area ? el("span", { class: "ar" }, h.area) : null),
+      h.note ? el("p", { class: "hn" }, h.note) : null,
+      ul));
+  });
+})();
+</script>
+</body></html>
