@@ -46,6 +46,9 @@ main { display: flex; flex-direction: column; gap: 28px; margin-top: 28px; }
 .tag.car { background: var(--ink); color: var(--bg); }
 .tag.share { background: var(--accent); color: var(--accent-ink); }
 .tag.rent { background: var(--pop-soft); color: var(--pop); }
+.tag.bus { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); line-height: 1.6; }
+.item.hl { border: 2px solid var(--pop); background: var(--pop-soft); }
+.item.hl .nm { color: var(--pop); }
 .body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .nm { font-weight: 700; text-decoration: none; }
 a.nm:hover { text-decoration: underline; text-decoration-color: var(--pop); text-underline-offset: 3px; }
@@ -62,7 +65,7 @@ a.nm:hover { text-decoration: underline; text-decoration-color: var(--pop); text
     <h1>佐賀の移動ガイド</h1>
     <p class="intro" id="intro"></p>
     <div class="checked" id="checked"></div>
-    <div class="legend"><span class="tag car">レンタカー</span><span class="tag share">シェアサイクル</span><span class="tag rent">レンタサイクル</span></div>
+    <div class="legend"><span class="tag bus">バス</span><span class="tag car">レンタカー</span><span class="tag share">シェアサイクル</span><span class="tag rent">レンタサイクル</span></div>
   </header>
   <main id="hubs"></main>
   <div class="foot">
@@ -70,7 +73,7 @@ a.nm:hover { text-decoration: underline; text-decoration-color: var(--pop); text
   </div>
 </div>
 
-<script>window.__ACCESS__ = {"checkedAt": "2026-11-17", "intro": "佐賀の聖地やイベント会場をめぐるときの「足」を、空港と主な駅ごとにまとめました。車がなくても回れるように、自転車の借り方も載せています。料金や営業時間は変わりやすいので、利用前に各社・各観光協会で確認してください。", "hubs": [{"name": "九州佐賀国際空港", "area": "佐賀市川副町", "note": "佐賀駅へは空港アクセスバスで約30分。県庁前など市の中心部にも停まります。", "items": [{"type": "レンタカー", "name": "空港の各社カウンター", "detail": "トヨタ、ニッポン、日産、タイムズ、オリックス、バジェットなど6〜7社。ターミナルビル1階のカウンターと、隣のレンタカーターミナルで手続きします（会社によって場所が違います）。営業はおおむね8時〜20時。", "mapQuery": "佐賀空港 レンタカーターミナル", "url": "https://www.pref.saga.lg.jp/airport/"}]}, {"name": "JR佐賀駅", "area": "佐賀市駅前中央", "note": "聖地が多い佐賀城まわり（本丸歴史館・656広場など）へは、駅から自転車で10〜15分ほど。", "items": [{"type": "レンタカー", "name": "バジェットレンタカー 佐賀駅前店", "detail": "佐賀駅構内の東館改札口からすぐ。営業は8時〜20時。", "mapQuery": "バジェットレンタカー 佐賀駅前店"}, {"type": "レンタカー", "name": "ニッポンレンタカー 佐賀駅前", "detail": "佐賀駅南口の正面。乗り捨てにも対応しています。", "mapQuery": "ニッポンレンタカー 佐賀駅前", "url": "https://www.nipponrentacar.co.jp/shop/saga.html"}, {"type": "シェアサイクル", "name": "チャリチャリ（Charichari）", "detail": "アプリで借りて、別のポートに返せるシェアサイクル。佐賀駅北口のほか、佐賀県庁・県立美術館など佐賀城周辺や中心市街地にポートがあります。", "mapQuery": "佐賀駅北口 チャリチャリ", "url": "https://charichari.bike/"}]}, {"name": "JR武雄温泉駅", "area": "武雄市", "note": "西九州新幹線の停車駅。武雄温泉の楼門までは歩いて15分ほどです。", "items": [{"type": "レンタサイクル", "name": "電動アシスト自転車（武雄市観光協会）", "detail": "駅の中にある観光案内所「たけなび」で申し込めます。坂の多い武雄でも楽に回れる電動タイプです。", "mapQuery": "武雄温泉駅 観光案内所", "url": "https://www.takeo-kk.net/"}]}, {"name": "嬉野温泉駅・嬉野温泉街", "area": "嬉野市", "note": "温泉街は駅から少し離れているので、自転車があると便利です。", "items": [{"type": "レンタサイクル", "name": "嬉野温泉観光協会の電動自転車", "detail": "観光協会で電動アシスト自転車を貸し出しています（有田・武雄と共同の事業）。", "mapQuery": "嬉野温泉観光協会"}, {"type": "レンタサイクル", "name": "シモムラサイクルズ", "detail": "嬉野温泉駅の近くにあるレンタサイクル店。ネットで予約できます。", "mapQuery": "シモムラサイクルズ 嬉野"}]}, {"name": "有田駅まわり", "area": "有田町", "note": "焼き物の町並みは自転車での散策向きです。", "items": [{"type": "レンタサイクル", "name": "KILIN ARITA 観光案内所", "detail": "電動アシスト自転車を借りられます（武雄・嬉野と共同の事業）。", "mapQuery": "KILIN ARITA 観光案内所"}]}, {"name": "JR唐津駅", "area": "唐津市", "note": "唐津城や唐津神社は駅から歩ける距離。呼子まで足をのばすならレンタカーかバスで。", "items": [{"type": "レンタサイクル", "name": "唐津駅総合観光案内所に相談", "detail": "駅で借りられるレンタサイクルの最新情報は確認できませんでした。貸し出しの有無は、駅の観光案内所で確かめてください。", "mapQuery": "唐津駅総合観光案内所", "url": "https://www.karatsu-kankou.jp/"}]}]};</script>
+<script>window.__ACCESS__ = {"checkedAt": "2026-11-17", "intro": "佐賀の聖地やイベント会場をめぐるときの「足」を、空港と主な駅ごとにまとめました。車がなくても回れるように、駅から出ているバスと自転車の借り方も載せています。料金や営業時間は変わりやすいので、利用前に各社・各観光協会で確認してください。", "hubs": [{"name": "九州佐賀国際空港", "area": "佐賀市川副町", "note": "佐賀駅へは空港アクセスバスで約30分。県庁前など市の中心部にも停まります。", "items": [{"type": "バス", "name": "佐賀空港アクセスバス（佐賀駅バスセンター行き）", "detail": "飛行機の到着に合わせて運行。佐賀県庁前・駅南本町などを通って佐賀駅バスセンターまで約30分。便によって停まるバス停が違います。", "mapQuery": "佐賀空港 バス乗り場"}, {"type": "レンタカー", "name": "空港の各社カウンター", "detail": "トヨタ、ニッポン、日産、タイムズ、オリックス、バジェットなど6〜7社。ターミナルビル1階のカウンターと、隣のレンタカーターミナルで手続きします（会社によって場所が違います）。営業はおおむね8時〜20時。", "mapQuery": "佐賀空港 レンタカーターミナル", "url": "https://www.pref.saga.lg.jp/airport/"}]}, {"name": "JR佐賀駅", "area": "佐賀市駅前中央", "note": "聖地が多い佐賀城まわり（本丸歴史館・656広場など）へは、駅から自転車で10〜15分ほど。", "items": [{"type": "バス", "name": "ゾンサガ ラッピングバス「フランシュシュ号」（佐賀市営バス）", "detail": "2026年9月30日から走っているコラボバス（1台）。ふだんの市営バスと同じ路線を、平日は延べ16便、土日祝は延べ18便運行。車内ではグッズが飾られ、源さくらの声で聖地の最寄りバス停を案内してくれます。どの路線を走るかは佐賀市交通局のホームページで確認を。市営バス全線で使えるコラボ1日乗車券（全8種）も販売されています。", "mapQuery": "佐賀駅バスセンター", "url": "http://www.bus.saga.saga.jp/", "highlight": true}, {"type": "バス", "name": "佐賀市営バス（佐賀駅バスセンター → 佐賀城跡）", "detail": "駅前の佐賀駅バスセンターから、佐賀県庁前を通って佐賀城跡まで行く系統があります。本丸歴史館は佐賀城跡バス停の近く。曜日によって運行する系統が変わるので時刻表で確認を。", "mapQuery": "佐賀駅バスセンター"}, {"type": "レンタカー", "name": "バジェットレンタカー 佐賀駅前店", "detail": "佐賀駅構内の東館改札口からすぐ。営業は8時〜20時。", "mapQuery": "バジェットレンタカー 佐賀駅前店"}, {"type": "レンタカー", "name": "ニッポンレンタカー 佐賀駅前", "detail": "佐賀駅南口の正面。乗り捨てにも対応しています。", "mapQuery": "ニッポンレンタカー 佐賀駅前", "url": "https://www.nipponrentacar.co.jp/shop/saga.html"}, {"type": "シェアサイクル", "name": "チャリチャリ（Charichari）", "detail": "アプリで借りて、別のポートに返せるシェアサイクル。佐賀駅北口のほか、佐賀県庁・県立美術館など佐賀城周辺や中心市街地にポートがあります。", "mapQuery": "佐賀駅北口 チャリチャリ", "url": "https://charichari.bike/"}]}, {"name": "JR武雄温泉駅", "area": "武雄市", "note": "西九州新幹線の停車駅。武雄温泉の楼門までは歩いて15分ほどです。", "items": [{"type": "バス", "name": "JR九州バス 嬉野線（武雄温泉駅南口 → 嬉野温泉バスセンター）", "detail": "武雄温泉と嬉野温泉をつなぐ路線バス。武雄温泉駅の南口から乗れます。", "mapQuery": "武雄温泉駅南口 バス停"}, {"type": "レンタサイクル", "name": "電動アシスト自転車（武雄市観光協会）", "detail": "駅の中にある観光案内所「たけなび」で申し込めます。坂の多い武雄でも楽に回れる電動タイプです。", "mapQuery": "武雄温泉駅 観光案内所", "url": "https://www.takeo-kk.net/"}]}, {"name": "嬉野温泉駅・嬉野温泉街", "area": "嬉野市", "note": "温泉街は駅から少し離れているので、自転車があると便利です。", "items": [{"type": "バス", "name": "JR九州バス 嬉野線（嬉野温泉駅・嬉野温泉バスセンター → 武雄温泉駅）", "detail": "新幹線の嬉野温泉駅と温泉街の中心にある嬉野温泉バスセンターの両方に停まり、武雄温泉駅南口まで行けます。", "mapQuery": "嬉野温泉バスセンター"}, {"type": "レンタサイクル", "name": "嬉野温泉観光協会の電動自転車", "detail": "観光協会で電動アシスト自転車を貸し出しています（有田・武雄と共同の事業）。", "mapQuery": "嬉野温泉観光協会"}, {"type": "レンタサイクル", "name": "シモムラサイクルズ", "detail": "嬉野温泉駅の近くにあるレンタサイクル店。ネットで予約できます。", "mapQuery": "シモムラサイクルズ 嬉野"}]}, {"name": "有田駅まわり", "area": "有田町", "note": "焼き物の町並みは自転車での散策向きです。", "items": [{"type": "レンタサイクル", "name": "KILIN ARITA 観光案内所", "detail": "電動アシスト自転車を借りられます（武雄・嬉野と共同の事業）。", "mapQuery": "KILIN ARITA 観光案内所"}]}, {"name": "JR唐津駅", "area": "唐津市", "note": "唐津城や唐津神社は駅から歩ける距離。呼子まで足をのばすならレンタカーかバスで。", "items": [{"type": "バス", "name": "昭和バス 呼子行き", "detail": "唐津大手口バスセンター（唐津駅を通る便もあり）から呼子まで約30分。イカで有名な呼子の朝市や港へ行くときに。", "mapQuery": "唐津大手口バスセンター", "url": "https://www.showa-bus.jp/"}, {"type": "レンタサイクル", "name": "唐津駅総合観光案内所に相談", "detail": "駅で借りられるレンタサイクルの最新情報は確認できませんでした。貸し出しの有無は、駅の観光案内所で確かめてください。", "mapQuery": "唐津駅総合観光案内所", "url": "https://www.karatsu-kankou.jp/"}]}, {"name": "JR肥前鹿島駅", "area": "鹿島市", "note": "日本三大稲荷のひとつ・祐徳稲荷神社への玄関口です。", "items": [{"type": "バス", "name": "祐徳バス 祐徳神社行き", "detail": "駅前から祐徳神社行きのバスで約10分、終点から神社まで歩いて5分ほど。", "mapQuery": "肥前鹿島駅前 バス停"}]}]};</script>
 <script>
 (function () {
   const data = window.__ACCESS__ || { hubs: [] };
@@ -81,7 +84,7 @@ a.nm:hover { text-decoration: underline; text-decoration-color: var(--pop); text
     return n;
   }
   const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//.test(u)) ? u : null;
-  const TAG = { "レンタカー": "car", "シェアサイクル": "share", "レンタサイクル": "rent" };
+  const TAG = { "バス": "bus", "レンタカー": "car", "シェアサイクル": "share", "レンタサイクル": "rent" };
   document.getElementById("intro").textContent = data.intro || "";
   document.getElementById("checked").textContent = data.checkedAt ? `情報の確認日：${data.checkedAt}` : "";
   const root = document.getElementById("hubs");
@@ -90,7 +93,7 @@ a.nm:hover { text-decoration: underline; text-decoration-color: var(--pop); text
     (h.items || []).forEach((it) => {
       const url = safeUrl(it.url);
       const map = it.mapQuery ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(it.mapQuery) : null;
-      ul.append(el("li", { class: "item" },
+      ul.append(el("li", { class: "item" + (it.highlight ? " hl" : "") },
         el("span", { class: "tag " + (TAG[it.type] || "rent") }, it.type || ""),
         el("div", { class: "body" },
           url ? el("a", { class: "nm", href: url, target: "_blank", rel: "noopener" }, it.name || "") : el("span", { class: "nm" }, it.name || ""),
