@@ -1,0 +1,109 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="はじめて佐賀に行く人のための、ゾンビランドサガ聖地巡礼モデルコース（非公式）"><meta property="og:type" content="website"><meta property="og:site_name" content="週刊ゾンサガ通信"><meta property="og:title" content="週刊ゾンサガ通信（非公式）"><meta property="og:description" content="はじめて佐賀に行く人のための、ゾンビランドサガ聖地巡礼モデルコース（非公式）"><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://doppelmican.github.io/zls-weekly/"><meta property="og:image" content="https://doppelmican.github.io/zls-weekly/og.png"><meta name="twitter:image" content="https://doppelmican.github.io/zls-weekly/og.png"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>はじめての佐賀・聖地巡礼｜週刊ゾンサガ通信</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column; each model course is a numbered route (steps joined by a line). */
+:root {
+  --bg: #f3f1ee; --surface: #ffffff; --ink: #1d2422; --muted: #5d6965; --line: #d9dcd8;
+  --accent: #1f7a5c; --accent-ink: #ffffff; --pop: #c2356b; --pop-soft: #f7e3ea;
+  --font-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131816; --surface: #1b2220; --ink: #e8ece9; --muted: #9aa7a2; --line: #2d3734;
+    --accent: #4fc39a; --accent-ink: #0d1a15; --pop: #f07aa6; --pop-soft: #3a1f2a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131816; --surface: #1b2220; --ink: #e8ece9; --muted: #9aa7a2; --line: #2d3734;
+  --accent: #4fc39a; --accent-ink: #0d1a15; --pop: #f07aa6; --pop-soft: #3a1f2a; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.75; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--pop); outline-offset: 2px; border-radius: 4px; }
+.wrap { max-width: 860px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.top-links { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; }
+.top-links a { color: var(--accent); text-decoration: none; }
+.top-links a:hover { text-decoration: underline; }
+header { padding-bottom: 16px; border-bottom: 3px solid var(--ink); display: flex; flex-direction: column; gap: 6px; }
+h1 { margin: 6px 0 0; font-weight: 700; font-size: clamp(26px, 5vw, 36px); line-height: 1.25; text-wrap: balance; }
+.intro { margin: 0; max-width: 42em; }
+.checked { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+.manners { margin-top: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; }
+.manners h2 { margin: 0 0 6px; font-size: 14px; letter-spacing: 0.08em; }
+.manners ul { margin: 0; padding-left: 1.2em; font-size: 13.5px; }
+main { display: flex; flex-direction: column; gap: 36px; margin-top: 32px; }
+.course h2 { margin: 0; font-size: 21px; font-weight: 700; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.badge { font-size: 12px; font-weight: 700; padding: 1px 10px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); }
+.badge.car { background: var(--ink); color: var(--bg); }
+.course .sum { margin: 6px 0 14px; color: var(--muted); max-width: 42em; }
+.route { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.step { position: relative; padding: 0 0 18px 44px; counter-increment: step; }
+.step::before { content: counter(step); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--pop); color: var(--accent-ink); font-family: var(--font-mono); font-weight: 500; display: grid; place-items: center; font-size: 14px; }
+.step:not(:last-child)::after { content: ""; position: absolute; left: 14px; top: 32px; bottom: 2px; width: 2px; background: var(--line); }
+.how { font-size: 12.5px; color: var(--muted); }
+.place { display: block; font-weight: 700; font-size: 16px; line-height: 1.5; }
+.scene { display: block; font-size: 13px; color: var(--pop); font-weight: 700; }
+.tip { margin: 2px 0 0; font-size: 14px; max-width: 42em; }
+.map { font-size: 12.5px; color: var(--accent); }
+.foot { margin-top: 40px; padding-top: 14px; border-top: 3px solid var(--ink); font-size: 12.5px; color: var(--muted); }
+.foot p { margin: 0; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="top-links"><a href="./">← 週刊ゾンサガ通信へ</a><a href="access.html">佐賀の移動ガイド →</a></div>
+    <h1>はじめての佐賀・聖地巡礼</h1>
+    <p class="intro" id="intro"></p>
+    <div class="checked" id="checked"></div>
+  </header>
+  <section class="manners" aria-label="巡礼のマナー">
+    <h2>出かける前に</h2>
+    <ul id="manners"></ul>
+  </section>
+  <main id="courses"></main>
+  <div class="foot">
+    <p>ファンによる非公式のまとめです。作中シーンは聖地巡礼ガイドなどで確認できたものを載せています。施設の情報は変わることがあるので、訪問前に公式情報を確認してください。</p>
+  </div>
+</div>
+
+<script>window.__GUIDE__ = {"checkedAt": "2026-11-17", "intro": "「ゾンビランドサガ」の舞台・佐賀にはじめて行く人のためのモデルコースです。作中に出てきた場所を、車なし・車ありの3つのコースにまとめました。移動手段の詳しい情報は「佐賀の移動ガイド」を見てください。", "manners": ["聖地の多くは、地元の人が普段使っている公園・施設・お店です。大声や長時間の場所取りは控えましょう。", "撮影するときは、ほかの人が写り込まないように気をつけて。施設内は撮影ルールを確認してください。", "営業時間・休館日は変わることがあります。出かける前に各施設の公式情報を確認してください。"], "courses": [{"title": "車なしで佐賀市を1日", "badge": "車なしOK", "summary": "佐賀駅を起点に、シェアサイクルや市営バスで回るコース。ラッピングバス「フランシュシュ号」に会えるかも。", "steps": [{"place": "JR佐賀駅", "how": "スタート", "tip": "駅前の佐賀駅バスセンターで、市営バス全線に乗れるコラボ1日乗車券（全8種）を買えます（日曜は窓口休み）。駅北口にはシェアサイクル「チャリチャリ」のポートもあります。", "mapQuery": "佐賀駅バスセンター"}, {"place": "656（ムツゴロウ）広場", "scene": "第8話：リリィがパピーに歌で感謝を伝えた場所", "how": "自転車か市営バスで", "tip": "屋根付きの広場なので雨の日でも安心。", "mapQuery": "656広場 佐賀市呉服元町"}, {"place": "佐賀県立佐賀城本丸歴史館", "scene": "第2話：フランシュシュ2度目のライブ会場", "how": "656広場から自転車で", "tip": "入場無料。すぐそばの鍋島直正公銅像も第2話のアイキャッチに登場します。", "mapQuery": "佐賀城本丸歴史館"}, {"place": "お昼はシシリアンライス", "scene": "第8話のアイキャッチ", "how": "佐賀城まわりで", "tip": "ご飯に甘辛い肉と生野菜、マヨネーズをのせた佐賀市のご当地グルメ。佐賀県庁のレストランでも食べられます。", "noMap": true}, {"place": "神野公園", "scene": "第8話：生前のリリィがパピーと遊んだ公園", "how": "佐賀駅の北側。自転車で", "tip": "佐賀藩主の別邸として造られた庭園。小さな遊園地もあります。", "mapQuery": "神野公園 佐賀市"}, {"place": "夜はドライブイン鳥 佐賀店", "scene": "作中に登場した店の系列店", "how": "佐賀駅から徒歩約5分", "tip": "鶏の焼肉と鳥めしで1日をしめくくり。1人でも入りやすいカウンター席あり。", "mapQuery": "ドライブイン鳥 佐賀店"}]}, {"title": "唐津を半日〜1日", "badge": "車なしOK", "summary": "唐津駅から歩いて回れる聖地が多いコース。第1話・第10話・第12話ゆかりの場所をめぐります。", "steps": [{"place": "唐津市ふるさと会館アルピノ", "scene": "第10話：500人規模のライブを行ったホール", "how": "JR唐津駅からすぐ", "tip": "観光案内所に近いので、地図やバスの情報を先にもらっておくと便利。", "mapQuery": "唐津市ふるさと会館アルピノ"}, {"place": "唐津市歴史民俗資料館", "scene": "第1話：フランシュシュが練習し、住まいにもなった洋館", "how": "唐津駅から徒歩", "tip": "2019年の時点では休館中で、外から見学する形でした。最新の公開状況は唐津市の情報で確認してください。", "mapQuery": "唐津市歴史民俗資料館"}, {"place": "唐津城", "scene": "第12話のアイキャッチ", "how": "資料館から徒歩", "tip": "天守からは唐津の海と虹の松原が見渡せます。", "mapQuery": "唐津城"}, {"place": "西ノ浜海水浴場", "scene": "第6話：落ち込んだ純子が独りたたずんだ浜辺", "how": "唐津城のすぐ西側", "tip": "夕方の景色がおすすめ。", "mapQuery": "西ノ浜海水浴場 唐津"}, {"place": "（足をのばすなら）鏡山展望台", "scene": "第11話：夜の展望台で巽幸太郎がさくらにゲキを飛ばした場所", "how": "車かタクシーで", "tip": "頂上までの道はカーブが多いので運転に注意。", "mapQuery": "鏡山展望台 唐津"}]}, {"title": "車で温泉とグッズめぐり 1泊2日", "badge": "車あり", "summary": "佐賀空港でレンタカーを借りて、鹿島・嬉野・武雄・伊万里をめぐるコース。武雄温泉物産館でグッズ探しも。", "steps": [{"place": "九州佐賀国際空港", "how": "1日目スタート", "tip": "空港で各社のレンタカーを借りられます。", "mapQuery": "佐賀空港 レンタカーターミナル"}, {"place": "道の駅鹿島の干潟", "scene": "第5話：フランシュシュが干潟の競技「ガタリンピック」に挑んだ場所", "how": "空港から車で", "tip": "有明海の干潟を間近に見られます。", "mapQuery": "道の駅鹿島"}, {"place": "祐徳稲荷神社", "how": "道の駅鹿島から車で", "tip": "日本三大稲荷のひとつ。作中には出ませんが、鹿島に来たらぜひ。", "mapQuery": "祐徳稲荷神社"}, {"place": "嬉野温泉に泊まる", "how": "鹿島から車で", "tip": "美肌の湯と温泉湯どうふで1日目の疲れをとって。宿選びは「今週の特集・宿」も参考に。", "mapQuery": "嬉野温泉"}, {"place": "武雄温泉物産館", "how": "2日目。嬉野から車で", "tip": "描き下ろしグッズを数多く扱うお店。新シリーズは物産館のXで告知されます。武雄温泉の楼門もすぐ近く。", "mapQuery": "武雄温泉物産館"}, {"place": "ドライブイン鳥 伊万里本店", "scene": "第1期に登場した焼肉店の本店", "how": "武雄から車で", "tip": "鶏の網焼きと鳥めしでお昼に。", "mapQuery": "ドライブイン鳥 伊万里本店"}, {"place": "唐津城・鏡山展望台", "scene": "第12話のアイキャッチ／第11話", "how": "伊万里から車で", "tip": "時間があれば唐津まで足をのばして、空港へ戻ります。", "mapQuery": "唐津城"}]}]};</script>
+<script>
+(function () {
+  const data = window.__GUIDE__ || { courses: [] };
+  function el(tag, attrs, ...kids) {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) { if (v == null) continue; if (k === "class") n.className = v; else n.setAttribute(k, v); }
+    for (const k of kids) if (k != null) n.append(k);
+    return n;
+  }
+  document.getElementById("intro").textContent = data.intro || "";
+  document.getElementById("checked").textContent = data.checkedAt ? `情報の確認日：${data.checkedAt}` : "";
+  const mn = document.getElementById("manners");
+  (data.manners || []).forEach((m) => mn.append(el("li", {}, m)));
+  const root = document.getElementById("courses");
+  (data.courses || []).forEach((c) => {
+    const ol = el("ol", { class: "route" });
+    (c.steps || []).forEach((s) => {
+      const map = !s.noMap && s.mapQuery ? el("a", { class: "map", target: "_blank", rel: "noopener",
+        href: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(s.mapQuery) }, "地図で見る") : null;
+      ol.append(el("li", { class: "step" },
+        s.how ? el("span", { class: "how" }, s.how) : null,
+        el("span", { class: "place" }, s.place || ""),
+        s.scene ? el("span", { class: "scene" }, "作中：" + s.scene) : null,
+        s.tip ? el("p", { class: "tip" }, s.tip) : null,
+        map));
+    });
+    root.append(el("section", { class: "course" },
+      el("h2", {}, c.title || "", c.badge ? el("span", { class: "badge" + (c.badge === "車あり" ? " car" : "") }, c.badge) : null),
+      c.summary ? el("p", { class: "sum" }, c.summary) : null,
+      ol));
+  });
+})();
+</script>
+</body></html>

@@ -53,6 +53,7 @@ header.mast { display: flex; flex-wrap: wrap; align-items: end; justify-content:
 .mast h1 .no { color: var(--pop); }
 .mast p { margin: 0; color: var(--muted); font-size: 13px; }
 .mast-side { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.guide-links { display: flex; flex-wrap: wrap; gap: 2px 16px; }
 .guide-link { font-size: 13px; font-weight: 700; color: var(--accent); text-decoration: none; }
 .guide-link:hover { text-decoration: underline; }
 
@@ -149,6 +150,42 @@ footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(
 .disclaimer { margin-top: 48px; padding-top: 16px; border-top: 3px solid var(--ink); font-size: 12.5px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
 .disclaimer p { margin: 0; max-width: 60em; }
 
+/* 締切アラート */
+.alert { background: var(--pop); color: var(--accent-ink); border-radius: 12px; padding: 14px 18px; }
+.alert h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 0.12em; font-weight: 700; }
+.alert ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.alert li { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.alert .al-left { font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
+.alert .al-body { font-weight: 700; min-width: 0; }
+.alert .al-to { font-weight: 400; font-size: 13px; opacity: 0.9; }
+.alert a { color: inherit; text-underline-offset: 3px; }
+
+/* 今月のふりかえり */
+.monthly { border-left: 4px solid var(--accent); padding: 4px 0 4px 16px; display: flex; flex-direction: column; gap: 6px; }
+.mo-kind { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); }
+.monthly h3 { margin: 0; font-size: 19px; font-weight: 700; }
+.monthly p { margin: 0; max-width: 42em; }
+.monthly ul { margin: 0; padding-left: 1.2em; }
+
+/* 再販・再入荷ウォッチ */
+.watch h3 { margin: 0 0 4px; font-size: 13px; letter-spacing: 0.12em; font-weight: 700; color: var(--accent); }
+.watch .sub { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+.watch-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.w { display: grid; grid-template-columns: 7em minmax(0, 1fr); gap: 4px 12px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; }
+@media (max-width: 520px) { .w { grid-template-columns: minmax(0, 1fr); } }
+.w-st { justify-self: start; font-size: 12px; font-weight: 700; padding: 1px 10px; border-radius: 999px; border: 1px solid currentColor; line-height: 1.7; color: var(--muted); }
+.w.hit { border: 2px solid var(--pop); }
+.w.hit .w-st { color: var(--accent-ink); background: var(--pop); border-color: var(--pop); }
+.w.off { opacity: 0.7; }
+.w-body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.w-name { font-weight: 700; text-decoration: none; }
+a.w-name:hover { text-decoration: underline; text-decoration-color: var(--pop); text-underline-offset: 3px; }
+.w-meta { font-size: 12.5px; color: var(--muted); }
+.w-up { margin: 0; font-size: 13.5px; }
+
+/* 予定・イベントの種類 */
+.ev-kind { display: inline-block; font-size: 11.5px; font-weight: 700; color: var(--pop); border: 1px solid currentColor; border-radius: 999px; padding: 0 8px; margin-right: 6px; line-height: 1.6; }
+
 /* 状態表示 */
 .state { background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 28px 24px; }
 .state h2 { margin: 0 0 6px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 22px; }
@@ -161,7 +198,10 @@ footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(
     <h1>週刊ゾンサガ通信<span class="no" id="issue-no"></span></h1>
     <div class="mast-side">
       <p>ゾンビランドサガ関連のニュースとグッズ情報を毎週まとめる、ファンによる非公式ページです</p>
-      <a class="guide-link" href="https://doppelmican.github.io/zls-weekly/access.html" target="_blank" rel="noopener">佐賀の移動ガイド（レンタカー・自転車）→</a>
+      <div class="guide-links">
+        <a class="guide-link" href="https://doppelmican.github.io/zls-weekly/guide.html" target="_blank" rel="noopener">はじめての佐賀・聖地巡礼 →</a>
+        <a class="guide-link" href="https://doppelmican.github.io/zls-weekly/access.html" target="_blank" rel="noopener">佐賀の移動ガイド（バス・レンタカー・自転車）→</a>
+      </div>
     </div>
   </header>
 
@@ -234,10 +274,43 @@ footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(
     const idx = issues.findIndex((x) => x.id === doc.id);
     $("issue-no").textContent = issues.length ? ` 第${issues.length - idx}号` : "";
 
+    // 締切アラート：見ている日から7日以内に締め切るグッズ（日本時間の23:59締切として数える）
+    const daysLeft = (s) => {
+      const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || "");
+      if (!m) return null;
+      const end = Date.UTC(+m[1], +m[2] - 1, +m[3], 14, 59, 59); // 23:59:59 JST
+      return Math.ceil((end - Date.now()) / 86400000) - 1;
+    };
+    const urgent = (d.goods || [])
+      .map((g) => ({ g, left: g.status === "終了" ? null : daysLeft(g.to) }))
+      .filter((x) => x.left !== null && x.left >= 0 && x.left <= 7)
+      .sort((a, b) => a.left - b.left);
+    if (urgent.length) {
+      const ul = el("ul");
+      urgent.forEach(({ g, left }) => {
+        const url = safeUrl(g.url);
+        const nm = url ? el("a", { href: url, target: "_blank", rel: "noopener" }, g.name || "") : el("span", {}, g.name || "");
+        ul.append(el("li", {},
+          el("span", { class: "al-left" }, left === 0 ? "今日まで" : `あと${left}日`),
+          el("span", { class: "al-body" }, nm, el("span", { class: "al-to" }, `　${md(g.to)}締切・${g.seller || ""}`))));
+      });
+      main.append(el("section", { class: "alert", "aria-label": "締切が近いグッズ" },
+        el("h3", {}, "締切まで1週間以内"), ul));
+    }
+
     main.append(el("section", { class: "lede" },
       el("div", { class: "kicker" }, `${d.weekLabel || ""}　${d.rangeFrom || ""} 〜 ${d.rangeTo || ""}`),
       el("h2", {}, d.headline || "今週のまとめ"),
       d.summary ? el("p", {}, d.summary) : null));
+
+    const mo = d.monthly;
+    if (mo && (mo.summary || (mo.points || []).length)) {
+      main.append(el("section", { class: "monthly" },
+        el("span", { class: "mo-kind" }, "今月のふりかえり"),
+        el("h3", {}, mo.title || "今月のまとめ"),
+        mo.summary ? el("p", {}, mo.summary) : null,
+        Array.isArray(mo.points) && mo.points.length ? el("ul", {}, ...mo.points.map((p) => el("li", {}, p))) : null));
+    }
 
     if (Array.isArray(d.goods) && d.goods.length) {
       const PILL = { "販売中": "on", "受付中": "on", "まもなく終了": "soon", "開始前": "plan", "終了": "off" };
@@ -264,6 +337,25 @@ footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(
         el("h3", {}, "グッズ・物販"),
         el("p", { class: "sub" }, "期間・オンライン販売・事後通販の有無。終了が近い順に並べています。"),
         list));
+    }
+
+    if (Array.isArray(d.watch) && d.watch.length) {
+      const WS = { "再販あり": "hit", "事後通販あり": "hit", "再入荷": "hit", "見張り中": "wait", "見送り": "off" };
+      const ul = el("ul", { class: "watch-list" });
+      d.watch.forEach((w) => {
+        const url = safeUrl(w.url);
+        const nm = url ? el("a", { class: "w-name", href: url, target: "_blank", rel: "noopener" }, w.name || "")
+                       : el("span", { class: "w-name" }, w.name || "");
+        ul.append(el("li", { class: "w " + (WS[w.status] || "wait") },
+          el("span", { class: "w-st" }, w.status || "見張り中"),
+          el("div", { class: "w-body" }, nm,
+            el("span", { class: "w-meta" }, [w.seller, w.why].filter(Boolean).join("・")),
+            w.update ? el("p", { class: "w-up" }, w.update) : null)));
+      });
+      main.append(el("section", { class: "watch" },
+        el("h3", {}, "再販・再入荷ウォッチ"),
+        el("p", { class: "sub" }, "売り切れ・受付終了したグッズの再販や事後通販を追いかけています。"),
+        ul));
     }
 
     const f = d.feature;
@@ -299,9 +391,13 @@ footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(
         const url = safeUrl(u.url);
         const t = url ? el("a", { href: url, target: "_blank", rel: "noopener" }, u.title || "") : el("span", {}, u.title || "");
         ul.append(el("li", {}, el("span", { class: "d" }, u.date || ""),
-          el("span", {}, t, u.place ? el("span", { class: "pl" }, `　${u.place}`) : null)));
+          el("span", {},
+            u.kind ? el("span", { class: "ev-kind" }, u.kind) : null,
+            t,
+            u.place ? el("span", { class: "pl" }, `　${u.place}`) : null,
+            u.cast ? el("span", { class: "pl" }, `　出演：${u.cast}`) : null)));
       });
-      main.append(el("section", { class: "upcoming" }, el("h3", {}, "今後の予定"), ul));
+      main.append(el("section", { class: "upcoming" }, el("h3", {}, "今後の予定・イベント"), ul));
     }
 
     (d.sections || []).forEach((s) => {
