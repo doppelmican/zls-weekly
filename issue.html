@@ -142,6 +142,7 @@ footer.foot { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(
 .f-kind.gourmet { background: var(--pop); color: var(--accent-ink); }
 .f-kind.charm { background: var(--ink); color: var(--bg); }
 .f-kind.stay { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.f-kind.activity { background: transparent; color: var(--pop); border: 1.5px dashed var(--pop); }
 .f-spot .lb { align-self: flex-start; font-size: 11.5px; font-weight: 700; color: var(--accent); border: 1px solid currentColor; border-radius: 999px; padding: 0 8px; line-height: 1.7; }
 .feature h3.f-title { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(20px, 3vw, 25px); line-height: 1.4; text-wrap: balance; letter-spacing: 0; }
 .f-area { font-size: 13px; color: var(--muted); margin-top: -6px; }
@@ -388,7 +389,7 @@ a.w-name:hover { text-decoration: underline; text-decoration-color: var(--pop); 
           map));
       });
       main.append(el("section", { class: "feature" },
-        el("span", { class: "f-kind" + (f.kind === "グルメ" ? " gourmet" : f.kind === "佐賀の魅力" ? " charm" : f.kind === "宿" ? " stay" : "") }, "今週の特集・" + (f.kind || "特集")),
+        el("span", { class: "f-kind" + (f.kind === "グルメ" ? " gourmet" : f.kind === "佐賀の魅力" ? " charm" : f.kind === "宿" ? " stay" : f.kind === "体験" ? " activity" : "") }, "今週の特集・" + (f.kind || "特集")),
         el("h3", { class: "f-title" }, f.title || ""),
         f.area ? el("div", { class: "f-area" }, f.area) : null,
         f.intro ? el("p", { class: "f-intro" }, f.intro) : null,
